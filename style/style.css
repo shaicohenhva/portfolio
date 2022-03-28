@@ -1,0 +1,573 @@
+/* CSS Document */
+
+/********************/
+/* FONT IMPORTEREN */
+/********************/
+/* SFUI-Text font (voor broodteksten) */
+/* @font-face{
+    font-family: 'SFUIText-light';
+    src: url(../fonts/SFUIText/SFUIText-Light.otf);
+}
+@font-face{
+    font-family: 'SFUIText-regular';
+    src: url(../fonts/SFUIText/SFUIText-Regular.otf);
+}
+@font-face{
+    font-family: 'SFUIText-semiBold';
+    src: url(../fonts/SFUIText/SFUIText-Semibold.otf);
+}
+@font-face{
+    font-family: 'SFUIText-bold';
+    src: url(../fonts/SFUIText/SFUIText-Bold.otf);
+}
+@font-face{
+    font-family: 'SFUIText-heavy';
+    src: url(../fonts/SFUIText/SFUIText-Heavy.otf);
+} */
+
+/* Academy font (voor speciale teksten) */
+@font-face{
+    font-family: 'Academy';
+    src: url(../fonts/AcademyEngravedStdRegular/Academy\ Engraved\ Std\ Regular.otf);
+}
+
+/* Giga Sans importeren */
+@font-face{
+    font-family: 'GigaSans-thin';
+    src: url(../fonts/GigaSans/Locomotype\ \ GigaSansThin.otf);
+}
+
+@font-face{
+    font-family: 'GigaSans-extraLight';
+    src: url(../fonts/GigaSans/Locomotype\ \ GigaSansExtraLight.otf);
+}
+
+@font-face{
+    font-family: 'GigaSans-light';
+    src: url(../fonts/GigaSans/Locomotype\ \ GigaSansLight.otf);
+}
+
+@font-face{
+    font-family: 'GigaSans-regular';
+    src: url(../fonts/GigaSans/Locomotype\ \ GigaSansRegular.otf);
+}
+
+@font-face{
+    font-family: 'GigaSans-bold';
+    src: url(../fonts/GigaSans/Locomotype\ \ GigaSansBold.otf);
+}
+
+@font-face{
+    font-family: 'GigaSans-extraBold';
+    src: url(../fonts/GigaSans/Locomotype\ \ GigaSansExtraBold.otf);
+}
+
+/********************/
+/* ALGEMENE STYLING */
+/********************/
+*, *::after, *::before {
+    box-sizing:border-box;  
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    font-family: 'GigaSans-extraLight';
+}
+
+h1{
+    font-family: 'Academy';
+    font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+h2{
+    font-family: 'GigaSans-bold';
+    font-size: 2em;
+    padding-left: 0.7em;
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+}
+
+h3{
+    font-family: 'GigaSans-semiBold';
+}
+
+h4{
+    font-family: 'Academy';
+    font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+}
+
+h5{
+    font-size: 1.1em;
+    font-family: 'GigaSans-semiBold';
+    padding-bottom: 0.5em;
+    padding-top: 1em;
+}
+
+p{
+    font-family: 'GigaSans-extraLight';
+    font-size: 1em;
+}
+
+/***************/
+/* NAV STYLING */
+/***************/
+nav{
+    height: 10vh;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links li a{
+    font-family: 'GigaSans-extraBold';
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+}
+
+.nav-links li a:hover{
+    color:  #5b78c7;
+    transition: all 0.2s ease;
+}
+
+/**************************/
+/* RESPONSIVE NAV STYLING */
+/**************************/
+/* bron: https://www.youtube.com/watch?v=H4MkGzoACpQ&ab_channel=DevEd */
+@media screen and (max-width: 768px){
+    .line{
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 5px;
+    }
+    .openL .line{
+        background-color: white;
+    }
+    
+    .nav{
+        position: relative;
+    }
+
+    .hamburger{
+        position: fixed;
+        cursor: pointer;
+        right: 5%;
+        top: 5%;
+        transform: translate(-5, -5%);
+        z-index: 100;
+    }
+
+    .nav-links{
+        position: fixed;
+        background-color: #5b78c7;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 95% -8%);
+        -webkit-clip-path: circle(100px at 95% -8%);
+        transition: all 1s ease-out;
+        z-index: 10;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 95% -8%);
+        -webkit-clip-path: circle(1000px at 95% -8%);
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li a{
+        font-size: 2em;
+        color: white;
+    }
+    .nav-links li a:hover{
+        color: #FD8E8E;
+        transition: all 0.2s ease;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+
+main{
+    max-width: 80em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**************************/
+/* LANDINGSPAGINA STYLING */
+/**************************/
+
+#home{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.maxh1{
+    max-width: 900px;
+}
+
+/* pijl animatie */
+/* bron: https://www.youtube.com/watch?v=Kks5qdW9EcE&ab_channel=IntellectHarsh */
+#home .arrow{
+    position: absolute;
+    bottom: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow h2{
+    padding-bottom: 2em;
+}
+
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #5b78c7;
+    border-right: 5px solid #5b78c7;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll 2s infinite;
+}
+
+.arrow span:nth-child(2){
+    animation-delay: -.2s;
+}
+
+@keyframes scroll{
+    0%{
+        opacity: 1;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+}
+
+
+/**************************/
+/* WORK PAGINA STYLING */
+/**************************/
+
+#work{
+    display: flex;
+    flex-direction: column;
+}
+
+#work .portfoliowerk{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 80vh;
+    align-items: center;
+}
+
+#work .casus{
+    padding-bottom: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    transition: 1s;
+}
+
+#work .casus:hover{
+    transform: scale(1.1);
+}
+
+#work img{
+    width: 370px;
+    padding-bottom: 0.5em;
+}
+
+#work h3{
+    padding-bottom: 0.3em;
+}
+
+#work p{
+    margin-bottom: 1.5em;
+}
+
+#work a{
+
+    background-color: #5b78c7;
+    padding: 0.8em;
+    border-radius: 1em;
+    color: white;
+    text-decoration: none;
+    font-family: 'GigaSans-semiBold';
+}
+
+#work a:hover{
+    background-color: white;
+    border: 2px solid #5b78c7;
+    color: #5b78c7;
+    transition: all 0.2s ease;
+}
+
+/**************************/
+/* ABOUT PAGINA STYLING */
+/**************************/
+
+
+#about{
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+#about h2{
+    padding-left: 0em;
+}
+
+#about img{
+    width: 300px;
+    border-radius: 60%;
+    padding-bottom: 1.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about p{
+    font-family: 'GigaSans-semiBold';
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 1.5em;
+}
+
+#about .eigenschappen{
+    background-color: hsl(224, 93%, 95%);
+    padding: 1em;
+    padding-left: 2em;
+    margin: 1.5em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 0px auto;
+
+}
+
+#about .eigenschappen ul{
+    padding-left: 2.3em;
+}
+
+#about .eigenschappen ul li{
+    padding-bottom: 0.5em;
+    font-family: 'GigaSans-light';
+    font-size: 1em;
+}
+
+/**************************/
+/* FOOTER CONTACT STYLING */
+/**************************/
+
+footer{
+    background-color: #5b78c7;
+    color: white;
+    width: 100vw;
+}
+
+footer #contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer #contact h2{
+    padding-left: 0em;
+}
+
+footer #contact a{
+    margin-bottom: 5em;
+    font-family: 'GigaSans-bold';
+    font-size: 1em;
+    color: #5b78c7;
+    text-decoration: none;
+    background-color: white;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+footer #contact a:hover{
+    background-color: #5b78c7;
+    border: 2px solid white;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+
+/**************************/
+/* CASE STYLING */
+/**************************/
+
+.case main{
+    max-width: 65em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case main h1{
+    font-family: 'GigaSans-bold';
+    font-size: 2em;
+    text-align: start;
+    color: #5b78c7;
+    padding-left: 0.7em;
+    padding-top: 1.5em;
+    padding-right: 0.7em;
+}
+
+.case main p{
+    font-family: 'GigaSans-extraLight';
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 1.5em;
+    font-size: 1em;
+}
+
+.case main ul li{
+    font-family: 'GigaSans-extraLight';
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 0.5em;
+    font-size: 1em;
+}
+
+.case main ul{
+    padding-bottom: 1em;
+    list-style: none;
+}
+
+.case main img{
+    width: 100%;
+    max-width: 500px;
+    padding-left: 1.5em;
+    padding-bottom: 1em;
+    padding-right: 1.5em;
+    height: 317.33px;
+    height: auto;
+}
+
+.case main .phone{
+    width: 100%;
+    max-width: 500px;
+    padding-left: 1.5em;
+    padding-bottom: 1em;
+    padding-right: 1.5em;
+    height: auto;
+}
+
+.caseLink{
+    display: flex;
+    justify-content: center;
+}
+
+.caseLink a{
+    background-color: #5b78c7;
+    border: 3px solid;
+    border-radius: 1em;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: white;
+    font-family: 'GigaSans-semiBold';
+    margin-bottom: 1.5em;
+}
+
+.caseLink a:hover{
+    background-color: white;
+    border: 2px solid #5b78c7;
+    color: #5b78c7;
+    transition: all 0.2s ease;
+}
+
+.case main li{
+    position: relative;
+}
+
+.case main li h2{
+    padding-left: 0em;
+    font-family: 'GigaSans-semiBold';
+    font-size: 1.5em;
+}
+
+.case main li button{
+    position: absolute;
+    right: 1.5em;
+    top: 4em;
+    background-color: #5b78c7;
+    color: white;
+    padding: 0.5em;
+    border-radius: 3em;
+    border: none;
+}
+
+.case main li hr{
+    border-top: 3px double #5b78c7;
+}
+/* Javascript functie dropdown list */
+
+.case .hiddenText{
+    display: none;
+}
+
+/* User scenario */
+.case .itemOne.showTextOne .hiddenText{
+    display: inline-block;
+}
+
+/* Job stories */
+.case .itemTwo.showTextTwo .hiddenText{
+    display: inline-block;
+}
+
+/* 3C Framework */
+.case .itemThree.showTextThree .hiddenText{
+    display: inline-block;
+}
+
+.hiddenText:nth-of-type(1){
+    padding-top: 1.5em;
+}
+
