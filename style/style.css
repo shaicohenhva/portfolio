@@ -3,27 +3,6 @@
 /********************/
 /* FONT IMPORTEREN */
 /********************/
-/* SFUI-Text font (voor broodteksten) */
-/* @font-face{
-    font-family: 'SFUIText-light';
-    src: url(../fonts/SFUIText/SFUIText-Light.otf);
-}
-@font-face{
-    font-family: 'SFUIText-regular';
-    src: url(../fonts/SFUIText/SFUIText-Regular.otf);
-}
-@font-face{
-    font-family: 'SFUIText-semiBold';
-    src: url(../fonts/SFUIText/SFUIText-Semibold.otf);
-}
-@font-face{
-    font-family: 'SFUIText-bold';
-    src: url(../fonts/SFUIText/SFUIText-Bold.otf);
-}
-@font-face{
-    font-family: 'SFUIText-heavy';
-    src: url(../fonts/SFUIText/SFUIText-Heavy.otf);
-} */
 
 /* Academy font (voor speciale teksten) */
 @font-face{
@@ -196,7 +175,7 @@ nav{
         color: white;
     }
     .nav-links li a:hover{
-        color: #FD8E8E;
+        color: #000000;
         transition: all 0.2s ease;
     }
     .nav-links li:nth-child(1){
